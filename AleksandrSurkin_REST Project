@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6b13f360-2a81-4d09-82f7-3cba73832e2d" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="575cc7c4-14dc-474b-afb3-0b1aa66150c3" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://postman-echo.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://postman-echo.com</con:endpoint></con:endpoints><con:resource name="" path="/get" id="8ff54e43-46cc-4e02-bcc4-1e86ea442e8a"><con:settings/><con:parameters><con:parameter><con:name>name</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>year</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="1" id="96b7b22e-da1a-4025-831d-13f80a2d9d63" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="https://postman-echo.com/get">get:Response</con:element></con:representation><con:request name="Request 1" id="d8d67c00-2e65-464a-8131-df6083ff3e77" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting></con:settings><con:endpoint>https://postman-echo.com</con:endpoint><con:request/><con:originalUri>https://postman-echo.com/get</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="year" value="1989"/>
+  <con:entry key="name" value="AleksandrSurkin"/>
+</con:parameters><con:parameterOrder><con:entry>name</con:entry><con:entry>year</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:restMockService id="a5935f24-1bd1-447a-909a-4d78c95036c8" port="8080" path="/" host="UK" name="AleksandrSurkin_REST MockService"><con:settings/><con:properties><con:property><con:name>Endpoint</con:name><con:value>/Surkin</con:value></con:property></con:properties><con:restMockAction name="/getInfo" method="GET" resourcePath="/getInfo" id="a34f6d73-cdfe-4650-ae42-70fbefbb78a7"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="e8e28d5a-1b2e-4edf-8237-7d74757abf9c" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<userInfo>
+<userName>#Aleksandr#</ userName >
+<userSurname>#Surkin#</ userSurname >
+</ userInfo >]]></con:responseContent></con:response></con:restMockAction><con:restMockAction name="/getInfo" method="POST" resourcePath="/getInfo" id="c6f635f9-c812-4a5a-b43e-17623c38bd63"><con:settings/><con:defaultResponse>Response 3</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="4a8b88b8-4d6b-44be-a803-1cab8c1b83c3" httpResponseStatus="201"><con:settings/><con:responseContent><![CDATA[<userInfo>
+<userName>#Aleksandr#</ userName >
+<userSurname>#Surkin#</ userSurname >
+</ userInfo >]]></con:responseContent></con:response><con:response name="Response 2" id="b2eef745-34d4-4586-8230-9a9268e6e0f0" httpResponseStatus="400" mediaType="application/json"><con:settings/><con:responseContent>{
+"message": "Ошибка"
+}</con:responseContent></con:response><con:response name="Response 3" id="c2f533f2-32b8-4c41-b88c-50caa85f4758" httpResponseStatus="500" mediaType="application/json"><con:settings/><con:responseContent>{
+"message": "“Server error. Please retry later”"
+}</con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
